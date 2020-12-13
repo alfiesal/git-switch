@@ -32,7 +32,28 @@ func main() {
 				Aliases: []string{"a"},
 				Usage:   "add a user to the list",
 				Action: func(c *cli.Context) error {
-					add("Alfie Salomons", "salomonsalfie@gmail.com")
+					prompt := promptui.Prompt{
+						Label:    "Username",
+					}
+
+					username, err := prompt.Run()
+
+					if err != nil {
+						log.Fatal(err)
+					}
+
+					prompt = promptui.Prompt{
+						Label:    "Email",
+					}
+
+					email, err := prompt.Run()
+
+					if err != nil {
+						log.Fatal(err)
+					}
+
+					add(username, email)
+
 					return nil
 				},
 			},

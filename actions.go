@@ -10,7 +10,7 @@ import (
 )
 
 func listAction(c *cli.Context) error {
-	config := readConfig("git-users.json")
+	config := read()
 
 	for _, user := range config.Users {
 		fmt.Println(user.Name + "\t <" + user.Email + ">")
@@ -21,7 +21,7 @@ func listAction(c *cli.Context) error {
 
 func addAction(c *cli.Context) error {
 	prompt := promptui.Prompt{
-		Label: "Username",
+		Label: "Your name",
 	}
 
 	username, err := prompt.Run()
@@ -44,14 +44,14 @@ func addAction(c *cli.Context) error {
 }
 
 func resetAction(c *cli.Context) error {
-	os.Remove("git-users.json")
+	os.Remove(configFilePath())
 	return nil
 }
 
 func switchAction(c *cli.Context) error {
 
 	var users []User
-	config := readConfig("git-users.json")
+	config := read()
 
 	var items []string
 

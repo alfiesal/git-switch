@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/urfave/cli/v2"
 	"io/ioutil"
 	"log"
@@ -10,6 +9,7 @@ import (
 )
 
 func main() {
+
 	app := &cli.App{
 		Name:  "gsu",
 		Usage: "Switch git users quickly. Switches locally by default",
@@ -24,19 +24,19 @@ func main() {
 				Name:    "add",
 				Aliases: []string{"a"},
 				Usage:   "add a user to the list",
-				Action: addAction,
+				Action:  addAction,
 			},
 			{
 				Name:    "reset",
 				Aliases: []string{"a"},
 				Usage:   "clear profile list",
-				Action: resetAction,
+				Action:  resetAction,
 			},
 			{
 				Name:    "switch",
 				Aliases: []string{"s"},
 				Usage:   "switch git users. Switches locally by default",
-				Action: switchAction,
+				Action:  switchAction,
 			},
 		},
 	}
@@ -48,25 +48,24 @@ func main() {
 }
 
 func store(name string, email string) {
-
-	config := readConfig("git-users.json")
+	config := read()
 	config.Users = append(config.Users, User{name, email})
 
-	file, err := os.OpenFile("git-users.json", os.O_RDWR|os.O_CREATE, 0644)
+	file, err := os.OpenFile(configFilePath(), os.O_RDWR|os.O_CREATE, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	json, _ := json.Marshal(config)
-	fmt.Println(string(json))
+
 	_, err = file.WriteAt(json, 0)
 	if err != nil {
-		log.Println(err)
+		log.Fatal(err)
 	}
 }
 
-func readConfig(configPath string) Config {
-	file, err := os.Open(configPath)
+func read() Config {
+	file, err := os.OpenFile(configFilePath(), os.O_RDONLY|os.O_CREATE, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -80,4 +79,10 @@ func readConfig(configPath string) Config {
 	json.Unmarshal(body, &config)
 
 	return config
+}
+
+func configFilePath() string {
+	homeDir, _ := os.UserHomeDir()
+
+	return homeDir + "/git-users.json"
 }

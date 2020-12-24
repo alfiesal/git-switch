@@ -11,7 +11,7 @@ import (
 func main() {
 
 	app := &cli.App{
-		Name:  "gsu",
+		Name:  "Git Switch",
 		Usage: "Switch git users quickly. Switches locally by default",
 		Commands: []*cli.Command{
 			{

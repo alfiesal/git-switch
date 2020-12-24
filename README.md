@@ -18,28 +18,19 @@ $ apt-get install git-switch
 
 ## Usage
 
-#### List users
-
 ```bash
-$ git-switch list
-```
+Git Switch - Switch git users quickly. Switches locally by default
 
-#### Add user
+USAGE:
+   git-switch [global options] command [command options] [arguments...]
 
-```bash
-$ git-switch add
-```
+COMMANDS:
+   list, ls   list all available users
+   add, a     add a user to the list
+   reset, a   clear profile list
+   switch, s  switch git users. Switches locally by default
+   help, h    Shows a list of commands or help for one command
 
-#### Switch user
-Switch user for current repository
-
-```bash
-$ git-switch add
-```
-
-#### Reset
-Remove all users
-
-```bash
-$ git-switch reset
+GLOBAL OPTIONS:
+   --help, -h  show help (default: false)
 ```

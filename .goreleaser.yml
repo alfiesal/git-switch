@@ -39,7 +39,7 @@ brews:
       owner: alfiesal
       name: homebrew-tap
 
-    url_template: "https://github.com/<repo_owner>/<repo_name>/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+    url_template: "https://github.com/alfiesal/git-switch/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
 
     commit_author:
       name: alfiesal

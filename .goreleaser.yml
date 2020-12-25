@@ -49,4 +49,3 @@ brews:
     homepage: "https://github.com/alfiesal/git-switch"
     description: "Switch git users quickly."
     license: "MIT"
-    skip_upload: true

@@ -32,3 +32,21 @@ changelog:
       - '^test:'
       - 'Merge pull request'
       - 'Merge branch'
+
+brews:
+  -
+    tap:
+      owner: alfiesal
+      name: homebrew-tap
+
+    url_template: "https://github.com/<repo_owner>/<repo_name>/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+
+    commit_author:
+      name: alfiesal
+      email: salomonsalfie@gmail.com
+
+    folder: git-switch
+    homepage: "https://github.com/alfiesal/git-switch"
+    description: "Switch git users quickly."
+    license: "MIT"
+    skip_upload: true

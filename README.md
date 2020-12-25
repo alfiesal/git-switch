@@ -7,13 +7,7 @@ Switch git users quickly.
 #### MacOS
 
 ```bash
-$ brew install git-switch
-```
-
-#### Ubuntu
-
-```bash
-$ apt-get install git-switch
+$ brew install alfiesal/tap/git-switch
 ```
 
 ## Usage

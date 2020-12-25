@@ -45,7 +45,7 @@ brews:
       name: alfiesal
       email: salomonsalfie@gmail.com
 
-    folder: git-switch
+    folder: Formula
     homepage: "https://github.com/alfiesal/git-switch"
     description: "Switch git users quickly."
     license: "MIT"

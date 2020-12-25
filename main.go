@@ -28,7 +28,7 @@ func main() {
 			},
 			{
 				Name:    "reset",
-				Aliases: []string{"a"},
+				Aliases: []string{"r"},
 				Usage:   "clear profile list",
 				Action:  resetAction,
 			},

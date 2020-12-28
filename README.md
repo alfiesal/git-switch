@@ -2,6 +2,8 @@
 
 Switch git users quickly.
 
+![](git-switch.gif)
+
 ## Installation
 
 #### MacOS

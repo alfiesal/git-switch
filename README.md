@@ -12,6 +12,17 @@ Switch git users quickly.
 $ brew install alfiesal/tap/git-switch
 ```
 
+#### Linux
+Download the latest version of git-switch from the [releases page](https://github.com/alfiesal/git-switch/releases) and then run:
+
+```bash
+$ mkdir git-switch && tar -zxvf git-switch_0.4.6_Linux_x86_64.tar.gz -C ./git-switch && sudo mv git-switch/git-switch /usr/local/bin
+```
+
+Don't forget to replace git-switch_0.4.6_Linux_x86_64.tar.gz with the archive that you've downloaded.
+
+
+
 ## Usage
 
 ```bash
